@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Parking Guide</title>
+    <link rel='stylesheet' href=Phone_Styles.css>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class=loc_box>
+        Miniatur Tempat Parkir
+    </div>
+    <div class=mini_status_box>
+        <div class=empty>
+        </div>
+        <div>
+            <img src="check.svg" height=80% width=100%>
+            <br>
+        </div>
+        <div class=searching>
+        </div>
+        <div>
+            <img src="error.svg" height=80% width=100%>
+            <br>
+        </div>
+    </div>
+    <div class=status_box>
+        <div>
+            <img src="check.svg" height=80% width=100%>
+            <br>
+        </div>
+        <div>
+            Tempat Kosong
+        </div>
+        <div class=empty>
+        </div>
+        <div>
+            <img src="error.svg" height=80% width=100%>
+            <br>
+        </div>
+        <div>
+            Kendaraan Belum Parkir
+        </div>
+        <div class=searching>
+        </div>
+        <div>
+            <img src="remove.svg" height=80% width=100%>
+            <br>
+        </div>
+        <div>
+            Tempat Terisi
+        </div>
+        <div class=occupied>
+        </div>
+    </div>
+    <div class=map>
+        <img src="map.png" width="100%" height="100%">
+        <div id="spot1"></div>
+        <div id="spot2"></div>
+        <div id="spot3"></div>
+        <div id="spot4"></div>
+        <div id="spot5"></div>
+    </div>
+    <script>
+    //var empty =3;
+    //var searching = 2;
+    //var occupied = 2;
+    //var distancestatus1 = "green";
+    var status2 = "green";
+    var status3 = "green";
+    var status4 = "green";
+    var status5 = "green";
+    var status1 = "<%= status1%>";
+    var servo1 = "<%= servo1%>";
+    var servo2 = "<%= servo2%>";
+    var BP="<%= BP%>";
+    var A;
+    var B;
+    var C;
+    var D;
+    var E;
+
+    $(document).ready(function() {
+
+        //Parking Spot
+        if (status1 == "green") {
+            A = 1;
+            $("#spot1").html("<img src='green.png' width='100%' height='100%'>");
+        } else {
+            A = 0;
+            $("#spot1").html("<img src='red.png' width='100%' height='100%'>");
+        }
+
+        if (status2 == "green") {
+            B = 1;
+            $("#spot2").html("<img src='green.png' width='100%' height='100%'>");
+        } else {
+            B = 0;
+            $("#spot2").html("<img src='red.png' width='100%' height='100%'>");
+        }
+
+        if (status3 == "green") {
+             C = 1;
+            $("#spot3").html("<img src='green.png' width='100%' height='100%'>");
+        } else {
+             C = 0;
+            $("#spot3").html("<img src='red.png' width='100%' height='100%'>");
+        }
+
+        if (status4 == "green") {
+            D = 1;
+            $("#spot4").html("<img src='green.png' width='100%' height='100%'>");
+        } else {
+            D = 0;
+            $("#spot4").html("<img src='red.png' width='100%' height='100%'>");
+        }
+
+        if (status5 == "green") {
+            E = 1;
+            $("#spot5").html("<img src='green.png' width='100%' height='100%'>");
+        } else {
+            E = 0;
+            $("#spot5").html("<img src='red.png' width='100%' height='100%'>");
+        }
+        var ETotal = (A + B + C + D + E);
+        var OTotal = (5 - ETotal);
+        $(".empty").text(ETotal);
+        $(".occupied").text(OTotal);
+        var num = parseInt(BP);
+        var searching = ETotal + num;
+        $(".searching").text(searching);
+    });
+
+    </script>
+</body>
+
+</html>
