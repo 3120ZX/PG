@@ -5,6 +5,8 @@ This Project uses: <br>
 2. Express.js Version 4.17.2
 3. ejs Version 3.1.6 (as HTML view engine)
 4. CSS
+5. pigpio (npm library)
+6. rpio (npm library)
 
 For using this project do these step before cloning the files:
 1. Install Node.js
