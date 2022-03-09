@@ -7,8 +7,3 @@ This Project uses:
 4. CSS
 5. pigpio (npm library)
 6. rpio (npm library)
-
-For using this project do these step before cloning the files:
-1. Install Node.js
-2. Do "npm init -y" (to make pakage.json)
-3. Do "npm i express" (to install express library)
